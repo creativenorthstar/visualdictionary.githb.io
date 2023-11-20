@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	background-color: #ffffff;
+}
+
+/* ----------------Header------------- */
+.navbar {
+	background-color: #24262b;
+	color: #fff;
+	padding: 10px 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.top-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+.menu li {
+	margin-right: 50px;
+}
+.menu a {
+	text-decoration: none;
+	color: #fff;
+	/* font-weight: bold; */
+	font-size: 16px;
+	transition: color 0.3s;
+}
+.menu a:hover {
+	color: #ffd700; /* Change to your desired hover color */
+}
+.login-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.login-menu li {
+    margin-right: 20px;
+}
+.login-menu button {
+    background-color: #ffd700;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.login-menu button:hover {
+    background-color: #333; /* Change to your desired hover color */
+    color: #fff;
+}
+/* -------------Dropdown styles------------ */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #333;
+	min-width: 160px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+.dropdown-content a {
+	color: #fff;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	transition: background-color 0.3s;
+}
+.dropdown-content a:hover {
+	background-color: #555; /* Change to your desired hover color */
+}
+
+/* -----------------Footer--------------- */
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+
+/* -------------Toggle Switch--------- */
+.can-toggle {
+	position: relative;
+	display: inline-block;
+  }
+  input[type="checkbox"] {
+	display: none;
+  }
+  .can-toggle__switch {
+	width: 80px;
+	height: 30px;
+	margin-right: 11px;
+	background-color: #fff;
+	border-radius: 15px;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  input:checked + label .can-toggle__switch {
+	background-color: #333; /* Dark mode background color */
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  .can-toggle__switch:before {
+	content: attr(data-unchecked);
+	color: #333; /* Light mode text color */
+	line-height: 30px;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	transition: transform 0.3s ease, color 0.3s ease;
+  }
+  input:checked + label .can-toggle__switch:before {
+	content: attr(data-checked);
+	color: #fff; /* Dark mode text color */
+	transform: translateX(100%);
+  }
+
+  /* Optional: Add hover effect */
+  .can-toggle__switch:hover {
+	background-color: #ddd; /* Light hover background color */
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  input:checked + label .can-toggle__switch:hover {
+	background-color: #555; /* Dark hover background color */
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+
+  
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
