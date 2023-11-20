@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Size Image Slider</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            display: flex;
+            width: 300%; /* Adjust based on the number of images */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100vw;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Optional: Add styles for navigation buttons */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fff;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image1.jpg" alt="image1">
+
+<div class="slider-container">
+    <!-- Slide 1 -->
+    <div class="slide">
+        <a href="page1.html"><img src="image1.jpg" alt="Slide 1"></a>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="slide">
+        <a href="page2.html"><img src="image2.jpg" alt="Slide 2"></a>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <a href="page3.html"><img src="image1.jpg" alt="Slide 3"></a>
+    </div>
+</div>
+
+<!-- Optional: Navigation buttons -->
+<button class="nav-btn prev" onclick="prevSlide">&#10094;</button>
+<button class="nav-btn next" onclick="nextSlide">&#10095;</button>
+
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slider = document.querySelector('.slider-container');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        const translateValue = -currentIndex * 100 / totalSlides;
+        slider.style.transform = `translateX(${translateValue}%)`;
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // Optional: Auto-play the slider
+    setInterval(nextSlide, 5000); // Change the interval as needed
+</script>
+
+</body>
+</html>
